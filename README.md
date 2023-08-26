@@ -1,0 +1,1 @@
+Bash configuration related stuff!
