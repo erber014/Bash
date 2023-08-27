@@ -1,0 +1,122 @@
+format = """
+[](#2E3440)\
+$os\
+$username\
+$hostname\
+[](fg:#2E3440 bg:#3B4252)\
+$directory\
+[](fg:#3B4252 bg:#4C566A)\
+$git_branch\
+$git_status\
+[](fg:#4C566A bg:#8FBCBB)\
+$c\
+$elixir\
+$elm\
+$golang\
+$gradle\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+$scala\
+[](fg:#8FBCBB bg:#81A1C1)\
+$docker_context\
+[](fg:#81A1C1 bg:#5E81AC)\
+$time\
+[](fg:#5E81AC)\
+"""
+
+# Disable the blank line at the start of the prompt
+# add_newline = false
+
+# Nord theme colors:
+# #2E3440
+# #3B4252
+# #434C5E
+# #4C566A
+
+# #8FBCBB
+# #88C0D0
+# #81A1C1
+# #5E81AC
+
+# You can also replace your username with a neat symbol like ï„   or disable this
+# and use the os module below
+[username]
+show_always = true
+style_user = "bg:#2E3440"
+style_root = "bg:#2E3440"
+format = '[$user ]($style)'
+disabled = false
+
+[hostname]
+ssh_only = false
+style = "bg:#2E3440"
+format = '[@ $hostname]($style)'
+trim_at = "."
+disabled = false
+
+# An alternative to the username module which displays a symbol that
+# represents the current operating system
+[os]
+style = "bg:#9A348E"
+disabled = true # Disabled by default
+
+[directory]
+style = "bg:#3B4252"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = " ó°ˆ™ï„ª "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important ó°ˆ™ " = " ó°ˆ™ï„ª "
+
+[git_branch]
+symbol = ""
+style = "bg:#4C566A"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#4C566A"
+format = '[$all_status$ahead_behind ]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:#81A1C1"
+format = '[ $symbol $context ]($style) $path'
+
+[c]
+symbol = " "
+style = "bg:##8FBCBB"
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+symbol = " "
+style = "bg:#8FBCBB"
+format = '[ $symbol ($version) ]($style)'
+
+#î‰–
+#îœ¸
+
+[nodejs]
+symbol = ""
+style = "bg:#8FBCBB"
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%T" # Hour:Minute Format
+style = "bg:#5E81AC"
+format = '[ $time ]($style)'
